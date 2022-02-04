@@ -35,9 +35,9 @@
 </style>
 <div class="form-group">
   {{#if isUpdate}}
-  <form action="/task/edited/{{id}}" method="POST" autocomplete="off">
+  <form action="/edited/{{id}}" method="POST" autocomplete="off">
     {{else}}
-    <form action="/task" method="POST" autocomplete="off">
+    <form action="/" method="POST" autocomplete="off">
       {{/if}}
 
       <label for="fname">Task</label>

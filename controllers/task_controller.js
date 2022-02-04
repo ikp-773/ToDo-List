@@ -7,7 +7,7 @@ const mongoose = require('mongoose');
 const task = mongoose.model('todo');
 
 router.get('/', (req, res) => {
-    res.render('task/add_edit', {
+    res.render('/add_edit', {
         viewTitle: 'Add Task',
         btn: 'Submit',
         isUpdate: false,
@@ -27,7 +27,7 @@ function addTask(req, res) {
     Task.taskDesc = req.body.taskDesc;
     Task.save((err, doc) => {
         if (!err)
-            res.redirect('task/list');
+            res.redirect('/list');
         else {
             console.log('Error in Saving Task : ' + err);
         }
@@ -38,7 +38,7 @@ function addTask(req, res) {
 router.get('/list', (req, res) => {
     task.find((err, docs) => {
         if (!err) {
-            res.render('task/list', {
+            res.render('/list', {
                 list: docs.map(docs => docs.toJSON(), ),
             })
         } else {
@@ -51,7 +51,7 @@ router.get('/list', (req, res) => {
 router.get('/delete/:id', (req, res) => {
     task.findByIdAndRemove(req.params.id, (err, docs) => {
         if (!err)
-            res.redirect('/task/list');
+            res.redirect('/list');
         else {
             console.log('Error Deleting : ' + err)
         }
@@ -62,7 +62,7 @@ router.get('/delete/:id', (req, res) => {
 router.get('/edit/:id', (req, res) => {
     task.findById(req.params.id, (err, doc) => {
         if (!err)
-            res.render('task/add_edit', {
+            res.render('/add_edit', {
                 viewTitle: 'Edit Task',
                 taskName: doc.taskName,
                 taskDesc: doc.taskDesc,
@@ -83,7 +83,7 @@ router.post('/edited/:id', (req, res) => {
         taskDesc: req.body.taskDesc
     }, (err, docs) => {
         if (!err)
-            res.redirect('/task/list');
+            res.redirect('/list');
         else
             console.log('Error in Updating Task : ' + err);
 
