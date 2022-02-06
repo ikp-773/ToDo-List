@@ -1,43 +1,73 @@
 <style>
-.button {
-  background-color: #4CAF50;
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 15px;
-  margin: 4px 2px;
-  padding: 14px 40px;
-  cursor: pointer;
-border-radius: 2px;
-}
+    .button {
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 15px;
+        margin: 4px 2px;
+        padding: 14px 40px;
+        cursor: pointer;
+        border-radius: 4px;
+    }
+
+    .button:hover{
+                color: white;        background-color: #41e046;
+
+
+    }
+
+    .todobox {
+        margin: 10px 10% 10px;
+        width: auto;
+        padding: 1% 5%;        border-radius: 4px;
+        text-decoration: none;
+        background-color: #2f5230;
+
+                color: rgb(223, 223, 223);
+
+    }
+
+    .todobox:hover {
+     
+        background-color: #7acf7d;
+
+                color: rgb(0, 0, 0);
+
+    }
+
+    .fas{
+        color:aliceblue
+    }
+
+     .fas{
+        color:aliceblue
+    }
+
+    .fas:hover{
+        color:rgb(235, 0, 0)
+
+    }
+
+    
 </style>
 
 <h2>Todo List</h2>
 <br>
-<table class="table  table-hover table-success">
-    <thead class="thead-dark">
-        <tr class="bg-success">
-            <th scope="col">Task Name</th>
-            <th scope="col">Task Description</th>
-            <th></th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        {{#each list}}
-        <tr>
-            <td>{{this.taskName}}</td>
-            <td>{{this.taskDesc}}</td>
-            <td><a href="/edit/{{this._id}}"><i class="fas fa-edit"></i></a></td>
-            <td><a href="/delete/{{this._id}}" ><i class="fas fa-trash-alt"></i></a>
-        </tr>
-{{/each}}
-    </tbody>
 
-    
-   
-</table>
- <a href="/" class="button">ADD</a>
+{{#each list}}
+<div class="container todobox">
+ <b><h4>{{this.taskName}}</h4></b>   
+    <p>{{this.taskDesc}}</p>
+    <a href="/edit/{{this._id}}"><i class="fas fa-edit"></i></a>
+    <a href="/delete/{{this._id}}"><i class="fas fa-trash-alt"></i></a>
+</div>
+{{/each}}
+
+
+
+
+<a href="/" class="button">ADD</a>

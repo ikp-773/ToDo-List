@@ -83,7 +83,7 @@ router.post('/edited/:id', (req, res) => {
         taskDesc: req.body.taskDesc
     }, (err, docs) => {
         if (!err)
-            res.redirect('task/list');
+            res.redirect('/todo');
         else
             console.log('Error in Updating Task : ' + err);
 
