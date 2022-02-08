@@ -14,8 +14,9 @@
         border-radius: 4px;
     }
 
-    .button:hover{
-                color: white;        background-color: #41e046;
+    .button:hover {
+        color: white;
+        background-color: #41e046;
 
 
     }
@@ -23,51 +24,53 @@
     .todobox {
         margin: 10px 10% 10px;
         width: auto;
-        padding: 1% 5%;        border-radius: 4px;
+        padding: 1% 5%;
+        border-radius: 4px;
         text-decoration: none;
         background-color: #2f5230;
 
-                color: rgb(223, 223, 223);
+        color: rgb(223, 223, 223);
 
     }
 
     .todobox:hover {
-     
+
         background-color: #7acf7d;
 
-                color: rgb(0, 0, 0);
+        color: rgb(0, 0, 0);
 
     }
 
-    .fas{
-        color:aliceblue
+    .fas {
+        margin-right: 15px;
+        color: aliceblue;
+        font-size: 22px;
     }
 
-     .fas{
-        color:aliceblue
-    }
-
-    .fas:hover{
-        color:rgb(235, 0, 0)
+    .fas:hover {
+        color: rgb(235, 0, 0);
+        font-size: 32px;
 
     }
-
-    
 </style>
 
-<h2>Todo List</h2>
+<div class="row">
+    <div class="col">
+        <h2>Todo List</h2>
+    </div>
+    <div class="col">
+        <a href="/" style="float:right;" class="button">ADD</a>
+    </div>
+</div>
 <br>
 
 {{#each list}}
 <div class="container todobox">
- <b><h4>{{this.taskName}}</h4></b>   
+    <b>
+        <h4>{{this.taskName}}</h4>
+    </b>
     <p>{{this.taskDesc}}</p>
     <a href="/edit/{{this._id}}"><i class="fas fa-edit"></i></a>
     <a href="/delete/{{this._id}}"><i class="fas fa-trash-alt"></i></a>
 </div>
 {{/each}}
-
-
-
-
-<a href="/" class="button">ADD</a>
