@@ -16,8 +16,4 @@ app.set('view engine', 'hbs');
 
 app.use('/', taskController);
 
-// Test
-// app.listen(6969, () => console.log('Server Started at 6969'));
-
-// Deployment
-app.listen(process.env.PORT || 5000, () => console.log('Server Start Success'));
+app.listen(process.env.PORT || 6969, () => console.log('Server Start Success'));
