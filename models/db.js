@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 // mongoose.connect('mongodb://localhost:27017/task_db', { useNewUrlParser: true }, (err) => {
 
 // Deployment
-mongoose.connect('mongodb+srv://user2:user2@task@cluster0.qrz7p.mongodb.net/Tasks?retryWrites=true&w=majority', { useNewUrlParser: true }, (err) => {
+mongoose.connect('mongodb+srv://user1:user1@cluster0.pirbs.mongodb.net/Cluster0?retryWrites=true&w=majority', { useNewUrlParser: true }, (err) => {
     if (!err)
         console.log('Mongo DB Connected');
     else
