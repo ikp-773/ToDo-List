@@ -1,7 +1,26 @@
-<h2>{{viewTitle}}</h2>
-<br>
+
 <style>
-  input[type=text],
+    .button {
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 15px;
+        margin: 4px 2px;
+        padding: 14px 40px;
+        cursor: pointer;
+        border-radius: 4px;
+    }
+
+    .button:hover {
+        color: white;
+        background-color: #41e046;
+
+
+    }  input[type=text],
   select {
     width: 100%;
     padding: 12px 20px;
@@ -33,6 +52,15 @@
     padding: 20px;
   }
 </style>
+<div class="row">
+    <div class="col">
+        <h2>{{viewTitle}}</h2>
+    </div>
+    <div class="col">
+        <a href="/todo" style="float:right;" class="button">VIEW TASKS</a>
+    </div>
+</div>
+<br>
 <div class="form-group">
   {{#if isUpdate}}
   <form action="/edited/{{id}}" method="POST" autocomplete="off">
